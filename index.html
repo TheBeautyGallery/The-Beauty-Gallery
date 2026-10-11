@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#79284c">
+<title>The Beauty Gallery | Client Form</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff1f5, #f7e2eb, #fffaf5);
+  color: #452638;
+  min-height: 100vh;
+  padding: 25px 15px;
+}
+
+header {
+  text-align: center;
+  margin: 15px auto 28px;
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #c6a064;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: auto auto 12px;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: #79284c;
+  background: white;
+}
+
+header h1 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #79284c;
+}
+
+header p {
+  margin-top: 8px;
+  color: #826675;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.card {
+  background: white;
+  max-width: 480px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 15px 45px #7d294d18;
+}
+
+.tag {
+  display: inline-block;
+  background: #f9e8ef;
+  color: #79284c;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.description {
+  color: #877681;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.field {
+  margin-bottom: 19px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ead9e1;
+  border-radius: 11px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: #fffdfd;
+}
+
+input:focus, textarea:focus {
+  border-color: #a54f75;
+  box-shadow: 0 0 0 3px #f9e8ef;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #786b72;
+  margin: 5px 0 20px;
+}
+
+.consent input {
+  width: 16px;
+  margin-top: 2px;
+  accent-color: #79284c;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  background: #79284c;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #542039;
+}
+
+.note {
+  text-align: center;
+  color: #94858d;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  color: #94858d;
+  font-size: 12px;
+  margin: 25px 0 5px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 23px 20px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BG</div>
+  <h1>The Beauty Gallery</h1>
+  <p>BEAUTY · COSMETICS · SKINCARE</p>
+</header>
+
+<main class="card">
+  <span class="tag">✦ CLIENT ENQUIRY</span>
+
+  <h2>Let's get to know you</h2>
+
+  <p class="description">
+    Please fill in your details below.
+    Our team will connect with you through WhatsApp.
+  </p>
+
+  <form id="clientForm">
+
+    <div class="field">
+      <label for="name">Full Name *</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your full name"
+        maxlength="100"
+        autocomplete="name"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="mobile">Mobile Number *</label>
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="Enter mobile number"
+        maxlength="20"
+        autocomplete="tel"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="address">Full Address *</label>
+      <textarea
+        id="address"
+        placeholder="House, street, area, city and PIN code"
+        maxlength="500"
+        autocomplete="street-address"
+        required
+      ></textarea>
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="consent" required>
+      <span>
+        I agree to share my details with The Beauty Gallery
+        so the shop can contact me about my enquiry.
+      </span>
+    </label>
+
+    <button type="submit">
+      ☎ Send Details on WhatsApp →
+    </button>
+
+    <p class="note">
+      WhatsApp will open with your details ready.
+      Please review the message and press Send.
+    </p>
+
+  </form>
+</main>
+
+<footer>
+  © <span id="year"></span> The Beauty Gallery
+</footer>
+
+<script>
+const WHATSAPP_NUMBER = "918076389831";
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+document.getElementById("clientForm").addEventListener(
+  "submit",
+  function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const consent = document.getElementById("consent").checked;
+
+    if (!name || !mobile || !address || !consent) {
+      alert("Please fill in all details and accept the consent.");
+      return;
+    }
+
+    const message =
+      "✨ NEW CLIENT ENQUIRY - THE BEAUTY GALLERY\n\n" +
+      "Name: " + name + "\n" +
+      "Mobile Number: " + mobile + "\n" +
+      "Address: " + address + "\n\n" +
+      "Submitted through The Beauty Gallery website.";
+
+    const whatsappURL =
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
+  }
+);
+</script>
+
+</body>
+  </html>
